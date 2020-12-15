@@ -44,12 +44,6 @@ def movie_display_layout(recom_mv_df):# movieid/title
                         ], outline=True, style={'marginTop':10, 'marginBottom':10})  # 'marginLeft':20, 'marginRight':40, 
                     ) for i in range(nmovies_per_row)
                 ]) for j in range(len(recom_mv_df)//nmovies_per_row)
-                # html.Div([
-                #     dbc.Card([
-                #         dbc.CardImg(src=f"assets/MovieImages/{mv_id_list[i+j*nmovies_per_row]}.jpg", top=True, style={'width':'100%'}),
-                #         dbc.CardBody([html.Div(mv_title_list[i+j*nmovies_per_row]), html.Div(f'Rank {i+j*nmovies_per_row+1}')])
-                #     ], style={'marginLeft':20, 'marginRight':40, 'marginTop':10, 'marginBottom':10}) for i in range(nmovies_per_row)
-                # ], style={'display':'flex'}) for j in range(len(mv_id_list)//nmovies_per_row)
             ], style={'overflowY':'scroll','height':500})
 
 
