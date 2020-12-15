@@ -1,3 +1,7 @@
+# dataset for movie recommendation
+projects/Movie-Recommendation-System/src/assets/MovieImages/
+projects/Movie-Recommendation-System/dataset/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
