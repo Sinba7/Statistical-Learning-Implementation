@@ -14,7 +14,7 @@ logo_header = html.Div(children=[
             html.Img(src='assets/movie_logo_2.png', style={'width':'10%'}),
             html.Div([
                 html.H1(children="Movie Recommender"),
-                dbc.Alert(color='info', children="Hi, welcome to my movie store. To get movie recommendations, please select a recommendation engine and input the required information. We will recommend some good movies based on your preference :).")
+                dbc.Alert(color='info', children="Hi, welcome to my movie store. To get movie recommendations, first, please select a recommendation engine. For genre-based recommender, please select your favorite genres; for collbarative recommender, plase rate the sample movies as many as possible and then click on get recommendations.")
             ], style={'marginLeft':40}),
         ], style={'display':'flex', 'alignItems':'top'})
 
@@ -38,7 +38,8 @@ def movie_display_layout(recom_mv_df):# movieid/title
                     dbc.Col(
                         dbc.Card([
                             dbc.CardHeader(f'Rank {i+j*nmovies_per_row+1}', style={'fontWeight':'bold'}),
-                            dbc.CardImg(src=f"assets/MovieImages/{recom_mv_df.loc[i+j*nmovies_per_row, 'movieid']}.jpg", top=True, style={'width':'100%'}),
+                            # dbc.CardImg(src=f"assets/MovieImages/{recom_mv_df.loc[i+j*nmovies_per_row, 'movieid']}.jpg", top=True, style={'width':'100%'}),
+                            dbc.CardImg(src=f"https://liangfgithub.github.io/MovieImages/{recom_mv_df.loc[i+j*nmovies_per_row, 'movieid']}.jpg", top=True, style={'width':'100%'}),
                             dbc.CardBody(html.Div(recom_mv_df.loc[i+j*nmovies_per_row, 'title'], style={'fontSize': '14px'}))
                         ], outline=True, style={'marginTop':10, 'marginBottom':10})  # 'marginLeft':20, 'marginRight':40, 
                     ) for i in range(nmovies_per_row)
@@ -68,7 +69,7 @@ rate_movie_div = html.Div([
     dbc.Row([
         dbc.Col(
             dbc.Card([
-                dbc.CardImg(src=f"assets/MovieImages/{rated_movie_df.loc[(i+j*nmovies_per_row), 'movieid']}.jpg", top=True, style={'width':'100%'}),
+                dbc.CardImg(src=f"https://liangfgithub.github.io/MovieImages/{rated_movie_df.loc[(i+j*nmovies_per_row), 'movieid']}.jpg", top=True, style={'width':'100%'}),
                 dbc.CardBody([
                     html.Div(children=rated_movie_df.loc[(i+j*nmovies_per_row), 'title'], style={'fontSize': '14px', 'marginBottom':'10px'}),
                     daq.Slider(id=f'slider_{i+j*nmovies_per_row}', min=0, max=5, value=0, marks={'0':'0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5'}, size=130)  
