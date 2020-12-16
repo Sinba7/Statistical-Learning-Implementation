@@ -1,2 +1,3 @@
 # Movie Recommendation System
-This project is an app serves for movie recommendation. To run the app, open terminal and simply go to under Movie-Recommendation-System folder and run ./startup in your terminal. If you have permission deny issue, please run the pip command in startup.sh file to install required packages and run python command to start the app. The url of the app should be at your local host http://0.0.0.0:8080/.
+App link: [Nostalgia Movie Recommender](https://ny-movie-recommender.herokuapp.com/)
+Please find detail of this project at repo [Movie-Recommeder]. (https://github.com/Sinba7/Movie-Recommender)
