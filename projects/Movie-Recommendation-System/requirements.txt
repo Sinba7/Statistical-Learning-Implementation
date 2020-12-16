@@ -1,7 +1,0 @@
-# pip freeze > requirements.txt
-pandas
-flask
-dash
-dash_bootstrap_components
-dash_daq
-surprise 
